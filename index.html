@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de piratas</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="shortcut icon" href="./src/img/navio-pirata.png" type="image/x-icon">
+    <script src="src/js/index.js" defer></script>
+</head>
+
+<body>
+    <h1 class="title">Cadastro de piratas</h1>
+    <hr>
+    <div class="listment">
+    <h2>Alistamento</h2>
+    <hr>
+    <form action="" id="form">
+        <label>Nome:</label>
+        <input type="text" id="name" name="nome" placeholder="Nome">
+        <label>Função:</label>
+        <input type="text" id="funcao" name="funcao" placeholder="Função">
+        <label>Idade:</label>
+        <input type="number" id="age" name="idade" placeholder="Idade">
+        <button class="activedButton" id="register">Cadastrar</button>
+    </form>
+    </div>
+    <hr>
+    <div class="removeRescalling">
+    <section id="buttons">
+        <div id="delete">
+        <button class="desactivedButton" onclick="deleted()">Remover</button>
+        <hr>
+        </div>
+
+        <div id="rescalingArea">
+        <button class="desactivedButton" onclick="reescalar()">reescalar</button>
+        <hr>
+        </div>
+
+    </div>
+
+        <button class="activedButton" onclick="exibir()">exibir tripulação</button>
+    </section>
+    <div id="tripulateList">
+        
+
+    
+    </div>
+</body>
+</html>
