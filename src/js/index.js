@@ -35,29 +35,25 @@ function deleted(){
     const deleted = `
     <label for="">Remover: </label>
     <input type="text" name="userToRemove" id="NameToRemove">
-    <button class="activedButton" onclick="remove()">Remover</button>`;
+    <button class="activedButton" onclick="removed()">Remover</button>`;
 
     deletedArea.innerHTML = deleted;
 
 }
 
 
-function remove(){
+function removed(){
     const userRemove = document.getElementById('NameToRemove').value;
-    const idToRemove = 0;
+    let idToRemove = 0;
 
 
     if(confirm('Deseja confirmar?')){
 
         for (let i = 0; i < tripulation.length; i++) {
 
-
             if(tripulation[i].name === userRemove){
                 idToRemove = tripulation[i].id;
-
-
-
-                console.table(tripulation);
+                document.getElementById(idToRemove).remove();
                 tripulation.splice(i, 1);
 
                 console.table(tripulation);
@@ -79,15 +75,18 @@ function exibir(){
     let funcao = ''
 
     for(let i = 0; i < tripulation.length; i++){
+        const div = document.createElement('div')
         const ul = document.createElement('ul');
         const li = document.createElement('li');
+        div.id = tripulation[i].id;
         name = tripulation[i].name
         funcao = tripulation[i].function
 
-        ul.append(name)
-        li.append(funcao)
-        
-        tripulateList.append(ul, li)
+        ul.append(name);
+        li.append(funcao);
+        div.append(ul, li);
+
+        tripulateList.append(div)
 
        name = ''
        funcao = ''
